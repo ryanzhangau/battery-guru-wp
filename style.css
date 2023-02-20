@@ -13,3 +13,7 @@ Text Domain:          flatsome-child
 License:              http://themeforest.net/licenses
 License URI:          http://themeforest.net/licenses
 */
+
+.hide {
+  display: none !important;
+}

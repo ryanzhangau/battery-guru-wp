@@ -20,55 +20,39 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-$cat_style = get_theme_mod('cat_style', 'badge');
-$color     = '';
-$text_pos  = '';
-
-if ($cat_style == 'overlay' || $cat_style == 'shade') {
-	$color = 'dark';
-}
-if ($cat_style == 'overlay') {
-	$text_pos = 'box-text-middle text-shadow-5';
-}
-if ($cat_style == 'badge') {
-	$text_pos .= ' hover-dark';
-}
-
-$classes = array('product-category', 'col');
+$classes = array('flatsome-sub-category', 'col', 'hide');
 ?>
 <div <?php wc_product_cat_class($classes, $category); ?>>
-	<div class="col-inner">
+
+	<?php
+	/**
+	 * The woocommerce_before_subcategory hook.
+	 *
+	 * @hooked woocommerce_template_loop_category_link_open - 10
+	 */
+	do_action('woocommerce_before_subcategory', $category);
+	?>
+
+
+	<?php
+	/**
+	 * The woocommerce_before_subcategory_title hook.
+	 *
+	 * @hooked woocommerce_subcategory_thumbnail - 10
+	 */
+	do_action('woocommerce_before_subcategory_title', $category);
+	?>
+
+	<div class=text-center">
+		<h5 class="uppercase header-title">
+			<?php echo $category->name; ?>
+		</h5>
 		<?php
 		/**
-		 * The woocommerce_before_subcategory hook.
-		 *
-		 * @hooked woocommerce_template_loop_category_link_open - 10
+		 * The woocommerce_after_subcategory_title hook.
 		 */
-		do_action('woocommerce_before_subcategory', $category);
+		do_action('woocommerce_after_subcategory_title', $category);
 		?>
-
-		<div class="flatsome-sub-category">
-			<?php
-			/**
-			 * The woocommerce_before_subcategory_title hook.
-			 *
-			 * @hooked woocommerce_subcategory_thumbnail - 10
-			 */
-			do_action('woocommerce_before_subcategory_title', $category);
-			?>
-
-			<div class=text-center">
-				<h5 class="uppercase header-title">
-					<?php echo $category->name; ?>
-				</h5>
-				<?php
-				/**
-				 * The woocommerce_after_subcategory_title hook.
-				 */
-				do_action('woocommerce_after_subcategory_title', $category);
-				?>
-			</div>
-		</div>
 
 		<?php
 		/**
