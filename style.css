@@ -17,3 +17,31 @@ License URI:          http://themeforest.net/licenses
 .hide {
   display: none !important;
 }
+
+.google-map.relative.mb {
+  width: 320px;
+  height: 320px;
+  border: 0px solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.warranty-statement .col-inner.text-left {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.download-button .col-inner.text-right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.download-button .col-inner.text-right .button {
+  margin: 0 !important;
+}
+
+.wpcf7-not-valid-tip {
+  color: #dc3232 !important;
+}
