@@ -14,10 +14,19 @@ License:              http://themeforest.net/licenses
 License URI:          http://themeforest.net/licenses
 */
 
+.yoast_breadcrumb_child > .col {
+  padding-bottom: 0;
+}
+
 .hide {
   display: none !important;
 }
 
+.wpcf7-not-valid-tip {
+  color: #dc3232 !important;
+}
+
+/* Conact Us page */
 .google-map.relative.mb {
   width: 320px;
   height: 320px;
@@ -26,6 +35,7 @@ License URI:          http://themeforest.net/licenses
   overflow: hidden;
 }
 
+/* Warranty Statement page */
 .warranty-statement .col-inner.text-left {
   display: flex;
   align-items: center;
@@ -42,6 +52,7 @@ License URI:          http://themeforest.net/licenses
   margin: 0 !important;
 }
 
-.wpcf7-not-valid-tip {
-  color: #dc3232 !important;
+/* FAQ page */
+.accordion.faqs {
+  margin-bottom: 60px;
 }
