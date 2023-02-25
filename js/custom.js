@@ -6,7 +6,7 @@ if ($subCats.length > 0) {
   const $shopContainer = $(".shop-container");
 
   const $sub_cat_heading = $(
-    `<div class="container section-title-container"><h2 class="section-title section-title-center"><b></b><span class="section-title-main" style="color:rgb(51, 51, 51);">SUB CATEGORIES</span><b></b></h2></div>`
+    `<h3 class="section-title section-title-center">SUB CATEGORIES</h3>`
   );
 
   const $select = $("<select></select>").append(
