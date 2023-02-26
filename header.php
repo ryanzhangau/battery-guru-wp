@@ -33,8 +33,20 @@
 
 		<main id="main" class="<?php flatsome_main_classes(); ?>">
 			<?php
+
 			$obj = get_queried_object();
-			if ($obj->taxonomy !== 'product_cat' && $obj->post_type !== 'product' && $obj->post_name !== 'home') {
+			$hideBreadcrumbs = false;
+
+			$attrs =  array('taxonomy' => 'product_cat', 'post_type' => 'product', 'post_name' => 'home', 'has_archive' => 'shop');
+
+			foreach ($attrs as $key => $value) {
+				if (isset($obj->$key) && $obj->$key === $value) {
+					$hideBreadcrumbs = true;
+					break;
+				}
+			}
+
+			if (!$hideBreadcrumbs) {
 			?>
 
 				<div class="row yoast_breadcrumb_child">
