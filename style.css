@@ -25,6 +25,42 @@ License URI:          http://themeforest.net/licenses
 .wpcf7-not-valid-tip {
   color: #dc3232 !important;
 }
+.wpcf7-form input,
+.wpcf7-form select {
+  border: 1px solid #eeab10;
+  box-shadow: none;
+  border-radius: 5px;
+}
+.wpcf7-response-output {
+  display: none;
+}
+
+.woocommerce .button {
+  border-radius: 5px;
+}
+
+/* Homepage */
+.home-cat > .col > .col-inner {
+  display: flex;
+  flex-direction: column;
+}
+.home-cat > .col > .col-inner > .image-box {
+  flex: 1;
+}
+
+@media screen and (max-width: 549px) {
+  .section-heading {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Sub-category */
+.sub-category-select {
+  border: 2px solid #eeab10;
+  border-radius: 5px;
+  box-shadow: none;
+  min-height: 50px;
+}
 
 /* Conact Us page */
 .google-map.relative.mb {
@@ -33,6 +69,13 @@ License URI:          http://themeforest.net/licenses
   border: 0px solid;
   border-radius: 50%;
   overflow: hidden;
+}
+
+@media screen and (max-width: 549px) {
+  .popmake-23 {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* Warranty Statement page */
@@ -55,4 +98,18 @@ License URI:          http://themeforest.net/licenses
 /* FAQ page */
 .accordion.faqs {
   margin-bottom: 60px;
+}
+
+/* Footer */
+.secure-payment {
+  margin: 15px auto;
+}
+.footer-menu .col:after,
+.footer-menu .col:before {
+  border: none !important;
+}
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+  .follow-icons {
+    font-size: 16px !important;
+  }
 }

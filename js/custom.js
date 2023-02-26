@@ -9,7 +9,7 @@ if ($subCats.length > 0) {
     `<h3 class="section-title section-title-center">SUB CATEGORIES</h3>`
   );
 
-  const $select = $("<select></select>").append(
+  const $select = $(`<select class="sub-category-select"></select>`).append(
     $('<option value="">Please Select...</option>')
   );
 
