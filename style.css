@@ -26,10 +26,12 @@ License URI:          http://themeforest.net/licenses
   color: #dc3232 !important;
 }
 .wpcf7-form input,
-.wpcf7-form select {
+.wpcf7-form select,
+.wpcf7-form textarea {
   border: 1px solid #eeab10;
   box-shadow: none;
   border-radius: 5px;
+  margin-top: 10px;
 }
 .wpcf7-response-output {
   display: none;
