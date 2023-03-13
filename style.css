@@ -83,14 +83,14 @@ License URI:          http://themeforest.net/licenses
   overflow-wrap: anywhere;
 }
 
-.woocommerce-page .type-product {
+.woocommerce-page .products .type-product {
   display: flex;
 }
-.woocommerce-page .type-product > .col-inner {
+.woocommerce-page .products .type-product > .col-inner {
   display: flex;
   flex: 1;
 }
-.woocommerce-page .type-product > .col-inner > .product-small.box {
+.woocommerce-page .products .type-product > .col-inner > .product-small.box {
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   margin-top: 20px;
   border-radius: 5px;
