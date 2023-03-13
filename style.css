@@ -41,6 +41,11 @@ License URI:          http://themeforest.net/licenses
   border-radius: 5px;
 }
 
+/* Menu */
+#menu-item-13565 > a {
+  color: 
+}
+
 /* Homepage */
 .home-cat > .col > .col-inner {
   display: flex;
@@ -62,6 +67,33 @@ License URI:          http://themeforest.net/licenses
   border-radius: 5px;
   box-shadow: none;
   min-height: 50px;
+}
+
+/* Products */
+.title-wrapper,
+.price-wrapper {
+  padding: 0 10px;
+}
+.title-wrapper .category.product-cat {
+  font-size: 12px;
+}
+
+.title-wrapper .product-title {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.woocommerce-page .type-product {
+  display: flex;
+}
+.woocommerce-page .type-product > .col-inner {
+  display: flex;
+  flex: 1;
+}
+.woocommerce-page .type-product > .col-inner > .product-small.box {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 /* Conact Us page */
