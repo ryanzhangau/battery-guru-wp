@@ -43,7 +43,7 @@ License URI:          http://themeforest.net/licenses
 
 /* Menu */
 #menu-item-13565 > a {
-  color: #ff0000;
+  color: #eeab10;
 }
 
 /* Homepage */
@@ -94,6 +94,34 @@ License URI:          http://themeforest.net/licenses
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   margin-top: 20px;
   border-radius: 5px;
+}
+
+.flatsome-product-data {
+  margin-top: 20px;
+}
+
+.flatsome-product-data h4 {
+  color: #eeab10;
+}
+
+.flatsome-product-data table {
+  border: 1px solid #ebebeb;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.flatsome-product-data table th,
+.flatsome-product-data table td {
+  border: 1px solid #ebebeb;
+  padding: 10px;
+}
+
+.flatsome-product-enquiry-button {
+  display: block;
+  margin-bottom: 20px;
 }
 
 /* Conact Us page */

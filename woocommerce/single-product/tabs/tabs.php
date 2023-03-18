@@ -44,59 +44,18 @@ if ($tabs_style == 'accordian' || $tabs_style == 'accordian-collapsed') {
  * @see woocommerce_default_product_tabs()
  */
 $product_tabs = apply_filters('woocommerce_product_tabs', array());
+?>
 
-$tab_count   = 0;
-$panel_count = 0;
-if (!empty($product_tabs)) : ?>
+<?php foreach ($product_tabs as $key => $product_tab) : ?>
+	<?php
+	if (esc_attr($key) === "description") {
+		echo "<hr />";
+		echo "<h2>Product Description</h2>";
+		if (isset($product_tab['callback'])) {
+			call_user_func($product_tab['callback'], $key, $product_tab);
+			echo "<br/>";
+			break;
+		}
+	} ?>
+<?php endforeach; ?>
 
-	<div class="woocommerce-tabs wc-tabs-wrapper container tabbed-content">
-		<ul class="tabs wc-tabs product-tabs small-nav-collapse <?php flatsome_product_tabs_classes(); ?>" role="tablist">
-			<?php foreach ($product_tabs as $key => $product_tab) : ?>
-				<?php
-				if (esc_attr($key) !== "description") {
-				?>
-					<li class="<?php echo esc_attr($key); ?>_tab <?php if ($tab_count == 0) echo 'active'; ?>" id="tab-title-<?php echo esc_attr($key); ?>" role="tab" aria-controls="tab-<?php echo esc_attr($key); ?>">
-						<a href="#tab-<?php echo esc_attr($key); ?>">
-							<?php echo wp_kses_post(apply_filters('woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key)); ?>
-						</a>
-					</li>
-				<?php $tab_count++;
-				} ?>
-			<?php endforeach; ?>
-		</ul>
-		<div class="tab-panels">
-			<?php foreach ($product_tabs as $key => $product_tab) : ?>
-				<?php
-				if (esc_attr($key) !== "description") {
-				?>
-					<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr($key); ?> panel entry-content <?php if ($panel_count == 0) echo 'active'; ?>" id="tab-<?php echo esc_attr($key); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr($key); ?>">
-						<?php if ($key == 'description' && ux_builder_is_active()) echo flatsome_dummy_text(); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped 
-						?>
-						<?php
-						if (isset($product_tab['callback'])) {
-							call_user_func($product_tab['callback'], $key, $product_tab);
-						}
-						?>
-					</div>
-				<?php $panel_count++;
-				} ?>
-			<?php endforeach; ?>
-
-			<?php do_action('woocommerce_product_after_tabs'); ?>
-		</div>
-	</div>
-
-	<?php foreach ($product_tabs as $key => $product_tab) : ?>
-		<?php
-		if (esc_attr($key) === "description") {
-			echo "<h2>Description</h2>";
-			if (isset($product_tab['callback'])) {
-				call_user_func($product_tab['callback'], $key, $product_tab);
-				echo "<br/>";
-				break;
-			}
-			$panel_count++;
-		} ?>
-	<?php endforeach; ?>
-
-<?php endif; ?>
