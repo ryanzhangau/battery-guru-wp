@@ -70,7 +70,7 @@ $calculator_text          = '';
 							}
 						elseif (!is_cart()) :
 							echo wp_kses_post(apply_filters('woocommerce_no_shipping_available_html', __('<a class="button primary popmake-13804 pum-trigger" style="border-radius: 5px; margin: 0; cursor: pointer;">
-							<span>Contact US For Fee Quote</span>
+							<span>Contact US For Free Quote</span>
 						  </a>', 'woocommerce')));
 						else :
 							// Translators: $s shipping destination.
