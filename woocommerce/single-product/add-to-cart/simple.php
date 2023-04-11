@@ -26,7 +26,10 @@ if (!$product->is_purchasable()) {
 
 echo wc_get_stock_html($product); // WPCS: XSS ok.
 
-if ($product->is_in_stock() && $product->get_attribute('enquiry-only') !== 'Yes') :
+?>
+<div class="flatsome-product-action">
+<?php
+if ($product->is_in_stock() && ($product->get_attribute('enquiry-only') == 'No' || $product->get_attribute('enquiry-only') == 'Both')) :
 ?>
 
 	<?php do_action('woocommerce_before_add_to_cart_form'); ?>
@@ -55,6 +58,8 @@ if ($product->is_in_stock() && $product->get_attribute('enquiry-only') !== 'Yes'
 
 	<?php do_action('woocommerce_after_add_to_cart_form'); ?>
 
-<?php else : ?>
+<?php endif; ?>
+<?php if($product->get_attribute('enquiry-only') == 'Yes' || $product->get_attribute('enquiry-only') == 'Both') : ?>
 	<button class="button alt flatsome-product-enquiry-button popmake-13804 pum-trigger">Enquiry</button>
 <?php endif; ?>
+</div>

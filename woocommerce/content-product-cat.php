@@ -43,7 +43,7 @@ $classes = array('flatsome-sub-category', 'col', 'hide');
 	do_action('woocommerce_before_subcategory_title', $category);
 	?>
 
-	<div class=text-center">
+	<div class="text-center">
 		<h5 class="uppercase header-title">
 			<?php echo $category->name; ?>
 		</h5>
