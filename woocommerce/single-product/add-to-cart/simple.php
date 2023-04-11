@@ -29,7 +29,7 @@ echo wc_get_stock_html($product); // WPCS: XSS ok.
 ?>
 <div class="flatsome-product-action">
 <?php
-if ($product->is_in_stock() && ($product->get_attribute('enquiry-only') == 'No' || $product->get_attribute('enquiry-only') == 'Both')) :
+if ($product->is_in_stock() && $product->get_attribute('enquiry-only') !== 'Yes') :
 ?>
 
 	<?php do_action('woocommerce_before_add_to_cart_form'); ?>
