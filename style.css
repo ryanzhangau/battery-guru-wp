@@ -133,7 +133,7 @@ License URI:          http://themeforest.net/licenses
   margin-bottom: 20px;
 }
 
-/* Conact Us page */
+/* Contact Us page */
 .google-map.relative.mb {
   width: 320px;
   height: 320px;
@@ -169,6 +169,12 @@ License URI:          http://themeforest.net/licenses
 /* FAQ page */
 .accordion.faqs {
   margin-bottom: 60px;
+}
+
+/* Shopping cart */
+.no-shipping {
+  margin-left: auto;
+  max-width: 200px;
 }
 
 /* Footer */

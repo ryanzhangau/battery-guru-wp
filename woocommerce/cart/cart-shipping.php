@@ -69,9 +69,9 @@ $calculator_text          = '';
 								echo wp_kses_post(apply_filters('woocommerce_shipping_may_be_available_html', __('Enter your address to view shipping options.', 'woocommerce')));
 							}
 						elseif (!is_cart()) :
-							echo wp_kses_post(apply_filters('woocommerce_no_shipping_available_html', __('<a class="button primary popmake-13804 pum-trigger" style="border-radius: 5px; margin: 0; cursor: pointer;">
-							<span>Contact US For Free Quote</span>
-						  </a>', 'woocommerce')));
+							echo wp_kses_post(apply_filters('woocommerce_no_shipping_available_html', __('<div class="no-shipping">
+							Oops, your postcode falls out of our standard delivery zones. Please contact us at <br/><a href="tel:03 9588 0116">03 9588 0116</a> for freight cost.
+						  </div>', 'woocommerce')));
 						else :
 							// Translators: $s shipping destination.
 							echo wp_kses_post(apply_filters('woocommerce_cart_no_shipping_available_html', sprintf(esc_html__('No shipping options were found for %s.', 'woocommerce') . ' ', '<strong>' . esc_html($formatted_destination) . '</strong>')));
