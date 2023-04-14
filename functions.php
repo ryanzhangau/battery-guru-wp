@@ -9,7 +9,6 @@ function child_enqueue__parent_scripts()
     wp_enqueue_script("test", get_stylesheet_directory_uri() . "/js/custom.js", array(), null, true);
 }
 
-
 /**
  * Move WooCommerce subcategory list items into their own <ul> separate from the product <ul>.
  */
@@ -24,6 +23,7 @@ function flatsome_move_subcat_list()
 
     remove_filter('woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail');
 }
+
 /**
  * Conditonally start the product loop with a <ul> contaner if subcats exist.
  */
@@ -34,6 +34,7 @@ function flatsome_product_loop_start()
         woocommerce_product_loop_start();
     }
 }
+
 /**
  * Print the subcat <li>s in our new location.
  */
@@ -41,6 +42,7 @@ function flatsome_maybe_show_product_subcategories()
 {
     echo woocommerce_maybe_show_product_subcategories();
 }
+
 /**
  * Conditonally end the product loop with a </ul> if subcats exist.
  */
@@ -50,4 +52,21 @@ function flatsome_product_loop_end()
     if ($subcategories) {
         woocommerce_product_loop_end();
     }
+}
+
+/**
+*   Change Proceed To Checkout Text in WooCommerce
+*   Add this code in your active theme functions.php file
+**/
+function woocommerce_button_proceed_to_checkout() {
+    $isNoShipping = WC()->session->get('shipping_method_counts')[0] === 0;
+    $new_checkout_url = WC()->cart->get_checkout_url();
+    if ($isNoShipping):
+    ?>
+        <a class="checkout-button button alt wc-forward disabled">
+    <?php else: ?>
+        <a href="<?php echo $new_checkout_url; ?>" class="checkout-button button alt wc-forward">
+    <?php endif;?>
+    <?php _e( 'Proceed to checkout', 'woocommerce' ); ?></a>
+<?php
 }

@@ -177,6 +177,11 @@ License URI:          http://themeforest.net/licenses
   max-width: 200px;
 }
 
+.checkout-button.disabled {
+  cursor: default;
+  background-color: #ccc !important;
+}
+
 /* Footer */
 .secure-payment {
   margin: 15px auto;
