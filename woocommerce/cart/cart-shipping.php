@@ -74,7 +74,9 @@ $calculator_text          = '';
 						  </div>', 'woocommerce')));
 						else :
 							// Translators: $s shipping destination.
-							echo wp_kses_post(apply_filters('woocommerce_cart_no_shipping_available_html', sprintf(esc_html__('No shipping options were found for %s.', 'woocommerce') . ' ', '<strong>' . esc_html($formatted_destination) . '</strong>')));
+							echo wp_kses_post(apply_filters('woocommerce_no_shipping_available_html', __('<div class="no-shipping">
+                            Oops, your postcode falls out of our standard delivery zones. Please contact us at <br/><a href="tel:03 9588 0116">03 9588 0116</a> for freight cost.
+                          </div>', 'woocommerce')));
 							$calculator_text = esc_html__('Enter a different address', 'woocommerce');
 						endif;
 						?>
