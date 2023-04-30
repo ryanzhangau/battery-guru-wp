@@ -70,3 +70,37 @@ function woocommerce_button_proceed_to_checkout() {
     <?php _e( 'Proceed to checkout', 'woocommerce' ); ?></a>
 <?php
 }
+
+/* Hide Woocommerce shipping method for a specific shipping class (for free shipping) */
+add_filter( 'woocommerce_package_rates', 'exclude_shipping_for_category', 10, 2 );
+function exclude_shipping_for_category( $rates, $package ) {
+    // Get the category ID(s) to be excluded from shipping
+    $excluded_category_ids = array(347);
+    $excluded_method_Ids = array('auspost');
+
+    // Check if the package contains any products from the excluded category
+    $exclude_package = false;
+    foreach ( $package['contents'] as $item_id => $item ) {
+        if ( has_term( $excluded_category_ids, 'product_cat', $item['data']->get_id() ) ) {
+            $exclude_package = true;
+            break;
+        }
+    }
+    // If the package contains any products from the excluded category, remove the shipping methods
+    if ( $exclude_package ) {
+        foreach ( $rates as $rate_key => $rate ) {
+        var_dump($rate->method_id);
+            if ( in_array($rate->method_id, $excluded_method_Ids) ) {
+                unset( $rates[ $rate_key ] );
+            }
+            // Add more conditions for other shipping methods you want to remove
+            // For example, to remove free shipping:
+            // if ( 'free_shipping' === $rate->method_id ) {
+            //     unset( $rates[ $rate_key ] );
+            // }
+        }
+    }
+    // Return the modified shipping rates
+    return $rates;
+}
+
