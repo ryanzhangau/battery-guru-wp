@@ -75,7 +75,7 @@ function woocommerce_button_proceed_to_checkout() {
 add_filter( 'woocommerce_package_rates', 'exclude_shipping_for_category', 10, 2 );
 function exclude_shipping_for_category( $rates, $package ) {
     // Get the category ID(s) to be excluded from shipping
-    $excluded_category_ids = array(347);
+    $excluded_category_ids = array(347,210,21);
     $excluded_method_Ids = array('auspost');
 
     // Check if the package contains any products from the excluded category
