@@ -89,7 +89,6 @@ function exclude_shipping_for_category( $rates, $package ) {
     // If the package contains any products from the excluded category, remove the shipping methods
     if ( $exclude_package ) {
         foreach ( $rates as $rate_key => $rate ) {
-        var_dump($rate->method_id);
             if ( in_array($rate->method_id, $excluded_method_Ids) ) {
                 unset( $rates[ $rate_key ] );
             }
